@@ -3,15 +3,52 @@ body {
     margin-bottom: 100px;
 }
 
+#main-image {
+    width: 150px;
+    height: 150px;
+}
+
 .header {
-    margin-top: 50px;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.title {
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+.subtitle {
+    font-size: 1rem;
+    margin-top: 5px;
+}
+
+.suggestion-section {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.suggestion-title {
+    font-size: 1rem;
+    font-weight: bold;
+    word-wrap: break-word;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.suggestion-button {
+    max-width: 90%;
+    white-space: normal;
+    padding: 8px 12px;
+    margin-top: 20px;
 }
 
 .footer {
-    background-color: #343a40;
-    color: #ffffff;
-    padding: 20px 0;
+    color: #343a40;
+    padding: 5px 0;
     position: fixed;
     bottom: 0;
     width: 100%;
+    text-align: center;
+    font-size: 0.8rem;
 }
