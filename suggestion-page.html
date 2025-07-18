@@ -1,24 +1,65 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sugestão de Tema</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./suggestion-page-style.css">
-    <link rel="icon" href="https://cdn-images-1.medium.com/fit/c/200/200/1*DaAsbyMdVgvruDbfYXTjrA.png">
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="./suggestion-page-style.css" />
+    <link
+      rel="icon"
+      href="https://cdn-images-1.medium.com/fit/c/200/200/1*DaAsbyMdVgvruDbfYXTjrA.png"
+    />
+  </head>
+  <body>
     <header class="header container d-flex align-items-center mt-3">
-        <img src="https://cdn-images-1.medium.com/fit/c/200/200/1*DaAsbyMdVgvruDbfYXTjrA.png" alt="Logo" class="logo">
-        <h1 class="title ml-3">Sugira um tema para o blog DevNiverse</h1>
+      <img
+        src="https://cdn-images-1.medium.com/fit/c/200/200/1*DaAsbyMdVgvruDbfYXTjrA.png"
+        alt="Logo"
+        class="logo"
+      />
+      <h1 class="title ml-3">Sugira um tema para o blog DevNiverse</h1>
     </header>
 
     <main class="container mt-4">
-        <textarea class="form-control rounded textarea" placeholder="Informe o tema que tem curiosidade e quais são as suas dúvidas sobre ele"></textarea>
+      <form>
+        <div class="form-group">
+          <input
+            type="email"
+            class="form-control rounded mb-3"
+            placeholder="Seu e-mail"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control rounded mb-3"
+            placeholder="Título do tópico"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <textarea
+            class="form-control rounded textarea mb-3"
+            placeholder="Descreva sobre o tema que tem curiosidade e quais são as suas dúvidas sobre ele"
+            required
+            rows="6"
+          ></textarea>
+        </div>
+        <p class="text-muted mb-2" style="font-style: italic">
+          Esta funcionalidade ainda está sendo implementada.
+        </p>
+        <button type="submit" class="btn btn-primary btn-block" disabled>
+          Enviar
+        </button>
+      </form>
     </main>
 
     <footer class="footer text-center mt-4">
-        <p>&copy; DevNiverse, 2025</p>
+      <p>&copy; DevNiverse, 2025</p>
     </footer>
-</body>
+  </body>
 </html>
