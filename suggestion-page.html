@@ -24,9 +24,10 @@
     </header>
 
     <main class="container mt-4">
-      <form>
+      <form id="suggestionForm">
         <div class="form-group">
           <input
+            id="email"
             type="email"
             class="form-control rounded mb-3"
             placeholder="Seu e-mail"
@@ -35,6 +36,7 @@
         </div>
         <div class="form-group">
           <input
+            id="title"
             type="text"
             class="form-control rounded mb-3"
             placeholder="Título do tópico"
@@ -43,6 +45,7 @@
         </div>
         <div class="form-group">
           <textarea
+            id="description"
             class="form-control rounded textarea mb-3"
             placeholder="Descreva sobre o tema que tem curiosidade e quais são as suas dúvidas sobre ele"
             required
@@ -58,8 +61,61 @@
       </form>
     </main>
 
+    <div id="toast" class="toast"></div>
+
     <footer class="footer text-center mt-4">
       <p>&copy; DevNiverse, 2025</p>
     </footer>
   </body>
+
+  <script>
+    document
+      .getElementById("suggestionForm")
+      .addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        const email = document.getElementById("email").value;
+        const title = document.getElementById("title").value;
+        const description = document.getElementById("description").value;
+
+        const payload = {
+          dsEmail: email,
+          dsTitle: title,
+          dsDescription: description,
+        };
+
+        try {
+          const response = await fetch(
+            "http://localhost:3000/suggestion/send", //TODO alterar pra endpoint de produção
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(payload),
+            }
+          );
+
+          if (!response.ok) {
+            showToast("Falha ao enviar sugestão", "error");
+            throw new Error("Network response was not ok");
+          }
+
+          showToast("Sugestão enviada com sucesso", "success");
+        } catch (error) {
+          console.error(error);
+          showToast("Erro ao enviar sugestão", "error");
+        }
+      });
+
+    function showToast(message, type = "success") {
+      const toast = document.getElementById("toast");
+      toast.textContent = message;
+      toast.className = `toast toast-${type} show`;
+
+      setTimeout(() => {
+        toast.classList.remove("show");
+      }, 3000);
+    }
+  </script>
 </html>
